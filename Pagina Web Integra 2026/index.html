@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Huellas en el Alma · Fundación Mujer Linda Cats</title>
+  <meta name="description" content="Deja tu huella: adopta, compra o dona un Kit de Aseo Solidario y apoya el rescate felino de la Fundación Mujer Linda Cats en Bogotá.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3B1B32">
+  <meta property="og:title" content="Huellas en el Alma · Deja tu huella">
+  <meta property="og:description" content="Adopta, dona o compra el Kit de Aseo Solidario con trazabilidad total.">
+  <meta property="og:image" content="Images/Img 33.png">
+  <link rel="icon" href="Images/Logo Huellas en el Alma.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="functions.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Huellas en el Alma, inicio">
+        <img src="Images/Logo Huellas en el Alma.png" alt="" width="56" height="56">
+        <span class="brand-text">Huellas en el Alma<small>Fundación Mujer Linda Cats</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="mainNav" class="main-nav" aria-label="Principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#adopta">Adopta</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#campanas">Campañas</a>
+        <a href="#ayudar">Cómo ayudar</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#tienda" class="btn btn-coral btn-sm nav-cta" data-track="cta_primario_header">Deja tu huella</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============ HOME · HERO ============ -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Fundación Mujer Linda Cats · Bogotá</p>
+          <h1>Deja tu huella.<br><span class="accent">Ellos dejaron la suya en ti.</span></h1>
+          <p class="lead">Cada mascota deja una huella imborrable en quien lo adopta. Aquí puedes dejar la tuya en el refugio: adoptando, donando un Kit de Aseo o aportando a una campaña, con cada peso trazado y reportado.</p>
+
+          <div class="hero-selector" role="group" aria-label="¿Cómo quieres dejar tu huella?">
+            <a href="#adopta" class="path-card" data-track="hero_adoptar">
+              <span class="path-icon" aria-hidden="true">🐾</span>
+              <strong>Adoptar</strong>
+              <span>Conoce a quienes buscan hogar</span>
+            </a>
+            <a href="#tienda" class="path-card path-card-main" data-track="hero_kit" data-kit-mode="donate">
+              <span class="path-icon" aria-hidden="true">🧼</span>
+              <strong>Kit de Aseo</strong>
+              <span>Comprar o donar</span>
+            </a>
+            <a href="#donar" class="path-card" data-track="hero_donacion">
+              <span class="path-icon" aria-hidden="true">💜</span>
+              <strong>Donación</strong>
+              <span>Desde un solo clic</span>
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-media">
+          <img src="Images/Img33.png" alt="Gato rehabilitado de la fundación, sano y tranquilo" width="640" height="560" fetchpriority="high">
+          <figcaption class="hero-badge">Cada kit llega al refugio con reporte de entrega</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOME · TRANSPARENCIA ============ -->
+    <section class="impact-strip" aria-labelledby="impactTitle">
+      <div class="container">
+        <div class="impact-head">
+          <h2 id="impactTitle">Transparencia en vivo</h2>
+          <span class="live-pill"><i aria-hidden="true"></i> Actualizado <time id="impactUpdated">hoy</time></span>
+        </div>
+        <div class="impact-grid">
+          <div class="metric"><span class="metric-num" data-count="0" id="mCats">0</span><span class="metric-label">Gatos rehabilitados</span></div>
+          <div class="metric"><span class="metric-num" data-count="0" id="mAdopted">0</span><span class="metric-label">Adopciones responsables</span></div>
+          <div class="metric"><span class="metric-num" data-count="0" id="mKits">0</span><span class="metric-label">Kits entregados al refugio</span></div>
+          <div class="metric metric-goal">
+            <span class="metric-label">Meta del mes: <strong id="goalText">0 / 0 kits</strong></span>
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Avance de la meta mensual de kits" id="goalBar"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOME · URGENTES ============ -->
+    
+    <section class="section" aria-labelledby="urgTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="urgTitle">Buscan hogar pronto</h2>
+          <p>Gatos listos para su segunda oportunidad. Conócelos y cuéntanos si tu casa puede ser la suya.</p>
+        </div>
+        <div class="cat-grid" id="urgentGrid"></div>
+        <p class="center mt"><a href="#adopta" class="btn btn-outline">Ver todos los peluditos</a></p>
+      </div>
+    </section>
+
+    <!-- ============ HOME · SHOWCASE KIT ============ -->
+    <section class="section section-terracota" aria-labelledby="kitShowTitle">
+      <div class="container kit-show">
+        <div>
+          <p class="eyebrow eyebrow-dark">Producto héroe</p>
+          <h2 id="kitShowTitle">Kit de Aseo Solidario</h2>
+          <p class="lead-sm">Higiene de calidad para tu casa o para el refugio. Tú eliges quién recibe el impacto.</p>
+
+          <div class="toggle" role="radiogroup" aria-label="Destino del kit" id="showToggle">
+            <button type="button" role="radio" aria-checked="true" data-mode="personal">Para mi mascota</button>
+            <button type="button" role="radio" aria-checked="false" data-mode="donate">Para el refugio</button>
+          </div>
+
+          <div class="impact-box" aria-live="polite" id="showImpact"></div>
+          <a href="#tienda" class="btn btn-coral" id="showCta" data-track="showcase_kit">Dona un Kit de Aseo hoy</a>
+        </div>
+        <img src="Images/Kit2.jpg" alt="Gato jugando en casa, limpio y saludable" loading="lazy" width="520" height="440" class="rounded">
+      </div>
+    </section>
+
+    <!-- ============ TIENDA ============ -->
+    <section id="tienda" class="section" aria-labelledby="tiendaTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="tiendaTitle">Tienda solidaria</h2>
+          <p>Compras con propósito: sabes a dónde va cada peso y recibes tu comprobante al instante.</p>
+        </div>
+
+        <div class="product-hero">
+          <div class="product-media">
+            <img src="Images/Kit1.jpeg" alt="Kit de Aseo Solidario para gatos" loading="lazy" width="520" height="480">
+            <span class="badge badge-coral">Más solicitado</span>
+          </div>
+
+          <div class="product-info">
+            <h3>Kit de Aseo Solidario</h3>
+            <p class="price"><span id="unitPrice">$0</span> <small>COP · por kit</small></p>
+            <ul class="check-list">
+              <li>Higiene completa pensada para mascota</li>
+              <li>Entrega garantizada y reporte de trazabilidad si lo donas</li>
+              <li>Recibo descargable al instante</li>
+            </ul>
+
+            <fieldset class="dual-select">
+              <legend>¿A quién va este kit?</legend>
+              <label class="dual-opt">
+                <input type="radio" name="kitMode" value="personal" checked>
+                <span><strong>Comprar para mi mascota</strong><small>Se envía a tu dirección</small></span>
+              </label>
+              <label class="dual-opt">
+                <input type="radio" name="kitMode" value="donate">
+                <span><strong>Donar al refugio</strong><small>Entrega directa con reporte</small></span>
+              </label>
+            </fieldset>
+
+            <div class="qty-row">
+              <span id="qtyLabel">Cantidad</span>
+              <div class="qty" role="group" aria-labelledby="qtyLabel">
+                <button type="button" id="qtyMinus" aria-label="Quitar uno">−</button>
+                <output id="qtyValue" aria-live="polite">1</output>
+                <button type="button" id="qtyPlus" aria-label="Añadir uno">+</button>
+              </div>
+              <strong class="subtotal" id="subtotal">$0</strong>
+            </div>
+
+            <div class="impact-calc" aria-live="polite" id="impactCalc"></div>
+
+            <a href="#checkout" class="btn btn-coral btn-block" id="goCheckout" data-track="kit_continuar">Continuar al pago</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHECKOUT UN SOLO PASO ============ -->
+    <section id="checkout" class="section section-soft" aria-labelledby="checkoutTitle">
+      <div class="container checkout-wrap">
+        <form id="checkoutForm" class="card form" novalidate>
+          <h2 id="checkoutTitle">Pago en un solo paso</h2>
+
+          <div class="grid-2">
+            <div class="field"><label for="coName">Nombre completo</label><input id="coName" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="coEmail">Correo (aquí llega tu recibo)</label><input id="coEmail" type="email" name="email" autocomplete="email" required></div>
+            <div class="field"><label for="coPhone">Celular</label><input id="coPhone" type="tel" name="phone" autocomplete="tel" inputmode="tel" required></div>
+            <div class="field"><label for="coDoc">Documento (para el certificado)</label><input id="coDoc" name="doc" inputmode="numeric" required></div>
+          </div>
+
+          <div class="grid-2" id="shippingFields">
+            <div class="field"><label for="coAddr">Dirección de envío</label><input id="coAddr" name="address" autocomplete="address-line1"></div>
+            <div class="field"><label for="coCity">Ciudad</label><input id="coCity" name="city" autocomplete="address-level2" value="Bogotá"></div>
+          </div>
+
+          <fieldset class="pay-methods">
+            <legend>Método de pago</legend>
+            <label><input type="radio" name="pay" value="PSE" checked><span>PSE</span></label>
+            <label><input type="radio" name="pay" value="Nequi"><span>Nequi</span></label>
+            <label><input type="radio" name="pay" value="Daviplata"><span>Daviplata</span></label>
+            <label><input type="radio" name="pay" value="Tarjeta"><span>Tarjeta</span></label>
+          </fieldset>
+
+          <label class="check"><input type="checkbox" name="terms" required> Acepto el tratamiento de mis datos personales y los términos de la fundación.</label>
+
+          <button type="submit" class="btn btn-coral btn-block btn-lg" id="payBtn">Pagar</button>
+          <p class="fine">Pago cifrado. Recibirás confirmación y certificado descargable inmediatamente.</p>
+        </form>
+
+        <aside class="card summary" aria-labelledby="sumTitle">
+          <h3 id="sumTitle">Tu aporte</h3>
+          <dl id="orderSummary"></dl>
+          <div class="impact-box" id="orderImpact" aria-live="polite"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ DONACIÓN MONETARIA ============ -->
+    <section id="donar" class="section" aria-labelledby="donarTitle">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2 id="donarTitle">Donación monetaria</h2>
+          <p>Dos o tres clics y listo. Elige un valor y, si quieres, hazlo mensual.</p>
+        </div>
+        <div class="card form">
+          <div class="amounts" role="radiogroup" aria-label="Valor de la donación" id="amounts"></div>
+          <div class="field">
+            <label for="customAmount">Otro valor (COP)</label>
+            <input id="customAmount" type="number" min="5000" step="1000" inputmode="numeric" placeholder="Ej. 75000">
+          </div>
+          <label class="check"><input type="checkbox" id="recurring"> Quiero que sea mensual (débito automático, cancelas cuando quieras)</label>
+          <div class="impact-box" id="donImpact" aria-live="polite"></div>
+          <button type="button" class="btn btn-coral btn-block btn-lg" id="donBtn" data-track="donacion_monetaria">Deja tu huella</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ADOPTA ============ -->
+    <section id="adopta" class="section section-soft" aria-labelledby="adoptaTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="adoptaTitle">Adopta un peludito</h2>
+          <p>Adopción responsable, sin intermediarios. Filtra según tu estilo de vida y envía tu solicitud aquí mismo.</p>
+        </div>
+
+        <form class="filters card" id="filters" aria-label="Filtros de adopción">
+          <div class="field"><label for="fAge">Edad</label>
+            <select id="fAge"><option value="">Todas</option><option value="cachorro">Cachorro</option><option value="joven">Joven</option><option value="adulto">Adulto</option><option value="senior">Senior</option></select></div>
+          <div class="field"><label for="fAct">Actividad</label>
+            <select id="fAct"><option value="">Cualquiera</option><option value="tranquilo">Tranquilo</option><option value="moderado">Moderado</option><option value="energico">Enérgico</option></select></div>
+          <div class="field"><label for="fCompat">Compatibilidad</label>
+            <select id="fCompat"><option value="">Cualquiera</option><option value="ninos">Niños</option><option value="gatos">Otros gatos</option><option value="perros">Perros</option><option value="apto">Apartamento</option></select></div>
+          <label class="check check-inline"><input type="checkbox" id="fSpecial"> Necesidades especiales</label>
+          <button type="reset" class="btn btn-ghost btn-sm" id="fReset">Limpiar</button>
+        </form>
+
+        <p class="results-count" id="resultsCount" aria-live="polite"></p>
+        <div class="cat-grid" id="catGrid"></div>
+        <p class="center empty" id="emptyState" hidden>No encontramos coincidencias con esos filtros. Prueba quitando alguno.</p>
+      </div>
+    </section>
+
+    <!-- ============ CAMPAÑAS & BLOG ============ -->
+    <section id="campanas" class="section" aria-labelledby="campTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="campTitle">Campañas y actualidad</h2>
+          <p>Historias de recuperación contadas con dignidad y metas claras.</p>
+        </div>
+        <div class="camp-grid" id="campGrid"></div>
+
+        <h3 class="sub-title">Del blog</h3>
+        <div class="blog-grid" id="blogGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO AYUDAR ============ -->
+    <section id="ayudar" class="section section-terracota" aria-labelledby="ayudarTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="ayudarTitle">Cómo ayudar</h2>
+          <p>Hay un lugar para ti, tengas tiempo, recursos o ambos.</p>
+        </div>
+        <div class="help-grid">
+          <article class="card help-card">
+            <h3>Hazte voluntario</h3>
+            <p>Rescate, transporte, jornadas de adopción y apoyo en redes.</p>
+            <button class="btn btn-olive" data-open="volDialog" data-track="voluntario_abrir">Hazte voluntario</button>
+          </article>
+          <article class="card help-card">
+            <h3>Apadrina un Peludo</h3>
+            <p>Aporte mensual para la alimentación y salud de un Peludo en tratamiento.</p>
+            <button class="btn btn-olive" id="sponsorBtn" data-track="apadrinar">Apadrinar</button>
+          </article>
+          <article class="card help-card">
+            <h3>Donación recurrente</h3>
+            <p>Débito automático mensual: la forma más poderosa de sostener el refugio.</p>
+            <a class="btn btn-olive" href="#donar" id="recurBtn">Activar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NOSOTROS ============ -->
+    <section id="nosotros" class="section" aria-labelledby="nosTitle">
+      <div class="container two-col">
+        <div>
+          <h2 id="nosTitle">Nosotros</h2>
+          <p>Somos una fundación de rescatistas en Bogotá. Rescatamos, rehabilitamos y damos en adopción gatos y perros que merecen una segunda oportunidad. Buscamos personas colaboradoras y serviciales para seguir creciendo y para difundir nuestra labor con herramientas visuales.</p>
+          <p>Creemos que ayudar no debería generar dudas: por eso publicamos nuestras cuentas.</p>
+
+          <h3 class="sub-title">Rendición de cuentas</h3>
+          <ul class="doc-list">
+            <li><a href="docs/informe-financiero-anual.pdf" download>Informe financiero anual (PDF)</a></li>
+            <li><a href="docs/reporte-impacto-kits.pdf" download>Reporte de impacto de kits (PDF)</a></li>
+          </ul>
+        </div>
+        <img src="Images/Banner Web.jpeg" alt="Voluntarias de la fundación con un gato rescatado" loading="lazy" width="520" height="460" class="rounded">
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section id="contacto" class="section contact">
+      <div class="container two-col">
+        <div>
+          <h2>Contáctanos</h2>
+          <address>
+            <p><strong>Teléfono:</strong> <a href="tel:+573012819013">+57 301 281 9013</a></p>
+            <p><strong>Correo:</strong> <a href="mailto:mujerlindaadopciones@gmail.com">mujerlindaadopciones@gmail.com</a></p>
+            <p><strong>Dirección:</strong> Cl 6d #1-66 este, Bogotá, Colombia</p>
+          </address>
+        </div>
+        <div>
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/mujerlindacats" target="_blank" rel="noopener" aria-label="Facebook"><img src="Images/imag%20face.png" alt="" width="56" height="56"></a>
+            <!-- TODO: reemplazar por la URL real del canal de YouTube (antes apuntaba a Instagram) -->
+            <a href="https://www.instagram.com/mujerlinda_/?hl=es-la" target="_blank" rel="noopener" aria-label="YouTube"><img src="Images/imag%20YT.png" alt="" width="56" height="56"></a>
+            <a href="https://www.instagram.com/mujerlinda_/?hl=es-la" target="_blank" rel="noopener" aria-label="Instagram"><img src="Images/imag%20Inst.png" alt="" width="56" height="56"></a>
+          </div>
+          <p><a href="https://www.fundacionmujerlindacats.com/" target="_blank" rel="noopener">fundacionmujerlindacats.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Fundación Mujer Linda Cats · Proyecto Huellas en el Alma</p>
+      <p><a href="#inicio">Volver arriba ↑</a></p>
+    </div>
+  </footer>
+
+  <!-- ============ DIALOGS ============ -->
+  <!-- Perfil -->
+  <dialog id="profileDialog" class="dialog" aria-labelledby="pTitle">
+    <button class="dialog-close" data-close aria-label="Cerrar">×</button>
+    <div class="profile">
+      <img id="pImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="420" height="360">
+      <div>
+        <h3 id="pTitle"></h3>
+        <p class="tags" id="pTags"></p>
+        <p id="pBio"></p>
+        <button class="btn btn-coral" id="pAdopt" data-track="adopcion_iniciar">Quiero adoptarle</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Formulario de adopción por pasos -->
+  <dialog id="adoptDialog" class="dialog" aria-labelledby="aTitle">
+    <button class="dialog-close" data-close aria-label="Cerrar">×</button>
+    <form id="adoptForm" class="form" novalidate>
+      <h3 id="aTitle">Solicitud de adopción</h3>
+      <p class="fine" id="aSub"></p>
+      <ol class="steps" id="adoptSteps" aria-label="Progreso">
+        <li class="on">Tus datos</li><li>Tu hogar</li><li>Compromiso</li>
+      </ol>
+
+      <fieldset data-step="1">
+        <div class="field"><label for="aName">Nombre completo</label><input id="aName" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="aEmail">Correo</label><input id="aEmail" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="aPhone">Celular</label><input id="aPhone" name="phone" type="tel" required autocomplete="tel"></div>
+      </fieldset>
+
+      <fieldset data-step="2" hidden>
+        <div class="field"><label for="aHome">Tipo de vivienda</label>
+          <select id="aHome" name="home" required><option value="">Selecciona</option><option>Apartamento</option><option>Casa</option><option>Finca</option></select></div>
+        <div class="field"><label for="aPets">¿Qué otras mascotas tienes?</label><input id="aPets" name="pets" placeholder="Ninguna / 1 perro…"></div>
+        <div class="field"><label for="aExp">¿Has tenido gatos y/o Perros antes?</label>
+          <select id="aExp" name="experience" required><option value="">Selecciona</option><option>Sí</option><option>No, sería mi primero</option></select></div>
+      </fieldset>
+
+      <fieldset data-step="3" hidden>
+        <div class="field"><label for="aWhy">¿Por qué quieres adoptar?</label><textarea id="aWhy" name="why" rows="3" required></textarea></div>
+        <label class="check"><input type="checkbox" name="c1" required> Me comprometo a esterilizar, vacunar y brindar atención veterinaria.</label>
+        <label class="check"><input type="checkbox" name="c2" required> Acepto una visita o seguimiento posterior a la adopción.</label>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" id="aPrev" hidden>Atrás</button>
+        <button type="button" class="btn btn-coral" id="aNext">Siguiente</button>
+        <button type="submit" class="btn btn-coral" id="aSend" hidden>Enviar solicitud</button>
+      </div>
+    </form>
+    <div id="adoptDone" class="done" hidden>
+      <h3>¡Solicitud recibida! 🐾</h3>
+      <p id="adoptDoneMsg"></p>
+      <button class="btn btn-olive" data-close>Cerrar</button>
+    </div>
+  </dialog>
+
+  <!-- Voluntariado -->
+  <dialog id="volDialog" class="dialog" aria-labelledby="vTitle">
+    <button class="dialog-close" data-close aria-label="Cerrar">×</button>
+    <form id="volForm" class="form" novalidate>
+      <h3 id="vTitle">Hazte voluntario</h3>
+      <div class="field"><label for="vName">Nombre</label><input id="vName" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="vEmail">Correo</label><input id="vEmail" name="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="vArea">¿En qué quieres ayudar?</label>
+        <select id="vArea" name="area" required><option value="">Selecciona</option><option>Rescate y búsqueda</option><option>Transporte</option><option>Jornadas de adopción</option><option>Redes y diseño</option><option>Hogar de paso</option></select></div>
+      <button type="submit" class="btn btn-coral btn-block">Enviar</button>
+      <p class="fine" id="volMsg" role="status"></p>
+    </form>
+  </dialog>
+
+  <!-- Confirmación de pago -->
+  <dialog id="payDialog" class="dialog" aria-labelledby="payTitle">
+    <button class="dialog-close" data-close aria-label="Cerrar">×</button>
+    <div class="done">
+      <h3 id="payTitle">¡Gracias por dejar tu huella! 💜</h3>
+      <p id="payMsg"></p>
+      <div class="impact-box" id="payImpact"></div>
+      <button class="btn btn-coral" id="receiptBtn">Descargar recibo / certificado</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
